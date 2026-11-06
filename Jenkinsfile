@@ -35,6 +35,7 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/*.tar.gz', fingerprint: true
             }
         }
+        
 stage('Docker image') {
     steps {
         sh 'docker build -t ${APP_NAME}:${BUILD_NUMBER} .'
